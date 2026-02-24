@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f5f5f4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #0c0c0e;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #2a2a2e;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3f;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d6d3d1 #f5f5f4;
+  }
+
+  .dark * {
+    scrollbar-color: #2a2a2e #0c0c0e;
+  }
+}
+
+/* ── Link underline: expands from cursor position ── */
+
+.link-underline {
+  --origin: 50%;
+}
+
+/* Base underline — always visible, subtle */
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: #d6d3d1;
+}
+
+.dark .link-underline::after {
+  background: #3a3a3f;
+}
+
+/* Bright underline — expands from cursor entry point */
+.link-underline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: #44403c;
+  transform: scaleX(0);
+  transform-origin: var(--origin) center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.dark .link-underline::before {
+  background: #e7e5e4;
+}
+
+.link-underline:hover::before {
+  transform: scaleX(1);
+}
+
+/* Active link — underline always fully visible */
+.link-underline.is-active::before {
+  transform: scaleX(1);
+}
+
+/* ── Slash bullet hover animation ── */
+
+.slash-bullet {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slash-item:hover .slash-bullet {
+  transform: translateX(4px) rotate(360deg);
+}
+
+.slash-item {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slash-item:hover {
+  transform: translateX(4px);
+}
