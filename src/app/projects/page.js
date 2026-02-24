@@ -24,6 +24,14 @@ export default function Projects() {
       github: "https://github.com/uwblueprint/sistema",
     },
     {
+      title: "Ledger",
+      href: "https://github.com/daniel-su1/ledger",
+      description:
+        "Cross-platform expense tracking and debt management app for friends and groups. Split bills, settle debts, and keep everyone on the same page.",
+      technologies: ["Kotlin", "Compose Multiplatform", "Supabase", "Ktor"],
+      github: "https://github.com/daniel-su1/ledger",
+    },
+    {
       title: "A Better Tent City",
       href: "https://github.com/uwblueprint/abtc",
       description:
