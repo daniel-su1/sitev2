@@ -3,6 +3,7 @@
 import Link from "./components/Link";
 
 const logos = {
+  "palantir.com": "/logos/palantir.png",
   "figma.com": "/logos/figma.png",
   "tesla.com": "/logos/tesla.png",
   "shopify.com": "/logos/shopify.svg",
@@ -53,6 +54,19 @@ export default function Home() {
             where i&apos;ve worked:
           </span>
           <ul className="grid gap-1 pl-4">
+            <li className="slash-item relative flex items-center justify-between gap-4">
+              <span className="flex items-start gap-4">
+                <span className="slash-bullet absolute left-[-16px] top-0 text-stone-300 dark:text-stone-600 inline-block">/</span>
+                <span className="text-stone-600 dark:text-stone-400">
+                  swe intern @{" "}
+                  <span className="inline-flex items-baseline gap-1">
+                    <Logo domain="palantir.com" alt="Palantir" />
+                    <Link href="https://www.palantir.com" className="font-medium">Palantir</Link>
+                  </span>
+                </span>
+              </span>
+              <span className="text-[11px] text-stone-400 dark:text-stone-500 shrink-0">fall &apos;26</span>
+            </li>
             <li className="slash-item relative flex items-center justify-between gap-4">
               <span className="flex items-start gap-4">
                 <span className="slash-bullet absolute left-[-16px] top-0 text-stone-300 dark:text-stone-600 inline-block">/</span>
